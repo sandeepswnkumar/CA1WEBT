@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100hv;
+        }
+        .logo{
+            position: absolute;
+            top: 15px;
+            left: 60px;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .header {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        .header h2 {
+            text-shadow: 5px 5px 13px gray;
+            color: black;
+        }
+
+        .loginSystem {
+            position: absolute;
+            top: 35px;
+            right: 30px;
+        }
+
+        .loginSystem button {
+            width: 100px;
+            height: 30px;
+            background-color: rgb(117, 196, 0);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 3px 6px 0px grey;
+            cursor: pointer;
+        }
+
+        .main {
+            height: calc(100vh - 105px);
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+
+        }
+
+        .nav {
+            height: 100%;
+            flex: 1;
+            box-shadow: 2px 4px 14px 1px grey;
+            border-radius: 7px;
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 25px;
+
+        }
+
+        .nav-menu-item {
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 35px;
+            box-shadow: 0px 2px 15px -4px grey;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-links {
+
+            color: black;
+            font-size: 20px;
+        }
+
+        .pages {
+            flex: 4;
+            box-shadow: 1px 4px 14px 1px grey;
+            border-radius: 7px;
+            margin: 0 10px;
+            overflow: hidden;
+
+        }
+
+        .page-content {
+            height: 100%;
+            padding: 10px 20px;
+        }
+
+        .pageHead {
+            height: 55px;
+            padding: 8px 0;
+            border-bottom: 3px solid black;
+            text-align: center;
+            margin: auto;
+
+        }
+
+        .pageItem {
+            padding: 15px 10px;
+            text-align: justify;
+
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #home .pageHead {
+            margin-top: 50px;
+            border: none;
+        }
+
+        #home .pageItem p {
+            margin-top: -90px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #about p {
+            line-height: 1.5;
+        }
+
+        #courses .pageItem {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .coursBox {
+            border: 1px solid black;
+            width: 30%;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 4px 14px 1px grey;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .coursBox h3 {
+            padding: 8px;
+            font-size: 30px;
+        }
+
+        .coursBox button {
+            width: 150px;
+            height: 30px;
+            background-color: chartreuse;
+            border: none;
+            cursor: pointer;
+            box-shadow: 1px 2px 6px 1px grey;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            background-color: rgb(117, 196, 0);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: rgb(130, 209, 12);
+        }
+
+
+        .anouncment {
+            flex: 1.3;
+            box-shadow: 1px 4px 14px 1px grey;
+            border-radius: 7px;
+            margin-left: 10px;
+            padding: 20px 10px;
+
+        }
+
+        .ancHead {
+            text-align: center;
+            font-size: 15px;
+            padding-bottom: 5px;
+            border-bottom: 3px solid black;
+            margin-bottom: 20px;
+        }
+
+        .ancItemBox {
+            height: 85%;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .ancItem {
+            margin: 20px 0;
+        }
+
+        .ancItem a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .ancItem h4 {
+            margin-left: 10px;
+            text-align: justify;
+            color: black;
+            text-decoration: underline;
+        }
+        .ancItem p {
+            margin-left: 10px;
+            text-align: justify;
+            font-size: 12px;
+        }
+
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 10;
+            font-size: 15px;
+            padding-left: 20px;
+            color: gray;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="/logo.jpg" height="60" alt="logo">
+    </div>
+    <div class="container">
+        <div class="header">
+            <h2>Learning Management System</h2>
+            <div class="loginSystem">
+                <a href="/signup.html"><button class="signup"> Sign Up</button></a>
+                <a href="/index.html"><button class="login"> Log in</button></a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <ul class="nav-menu">
+                    <a href="#home" class="nav-menu-item">
+                        <li class="nav-links">Home</li>
+                    </a>
+                    <a href="#about" class="nav-menu-item">
+                        <li class="nav-links">About</li>
+                    </a>
+                    <a href="#courses" class="nav-menu-item">
+                        <li class="nav-links">Courses</li>
+                    </a>
+                    <a href="#contact" class="nav-menu-item">
+                        <li class="nav-links">Contact</li>
+                    </a>
+                    <a href="#career" class="nav-menu-item">
+                        <li class="nav-links">Career</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pages">
+
+                <div id="home" class="page-content">
+                    <div class="pageHead">
+                        <img src="/LEARINGIN.jpg" width="500" alt="">
+                    </div>
+                    <div class="pageItem">
+                        <p>
+                            Start Learning with us
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div id="about" class="page-content">
+                    <div class="pageHead">
+                        <h1>About Us</h1>
+                    </div>
+                    <div class="pageItem">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate nulla aperiam?
+                            Recusandae modi est deserunt autem consectetur laboriosam ratione reprehenderit nisi,
+                            placeat aliquam corrupti nesciunt! Deleniti eos accusantium, obcaecati debitis, recusandae
+                            odit ut similique maxime impedit facilis culpa vero laudantium corporis ex corrupti
+                            distinctio nostrum eligendi, illo nulla quo deserunt beatae magni? Quod autem, aliquam
+                            pariatur iusto quia labore eos impedit quis libero ipsam illum quasi odio exercitationem
+                            animi vitae porro perspiciatis rerum dolorem! Aliquam sint illum ipsa magnam? Vel id
+                            reiciendis cum, perferendis repellat laboriosam cupiditate necessitatibus recusandae fuga
+                            illo sit doloribus animi, voluptate ipsum amet cumque numquam. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Numquam eius repellat eos ad expedita facilis ut eligendi
+                            ducimus delectus exercitationem veniam natus aut molestias sapiente iure vel, enim earum
+                            dolorum, fugiat, fuga quasi! Perspiciatis qui vero consequuntur, neque, sunt quis officia
+                            animi quam, sapiente explicabo earum expedita natus voluptates impedit est iure minus libero
+                            enim id obcaecati aspernatur. Pariatur sapiente sequi inventore asperiores ipsam, error
+                            repudiandae neque nihil quidem voluptatibus molestias culpa tempore? Atque cupiditate, amet
+                            voluptatem, exercitationem dolorum ut ipsam adipisci voluptates vel temporibus id soluta
+                            animi recusandae numquam consequuntur.
+                        </p>
+                    </div>
+
+                </div>
+                <div id="courses" class="page-content">
+                    <div class="pageHead">
+                        <h1>Courses</h1>
+                    </div>
+                    <div class="pageItem">
+                        <div class="coursBox">
+                            <h3>Java</h3>
+                            <a href="https://www.w3schools.com/java/default.asp" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>C++</h3>
+                            <a href="https://www.w3schools.com/CPP/default.asp" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>C</h3>
+                            <a href="https://www.w3schools.in/c-tutorial/" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>Go lang</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>PHP</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>JavaScript</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>Rust</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>Ruby</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+                        <div class="coursBox">
+                            <h3>Python</h3>
+                            <a href="https://www.google.com" target="_blank"><button>Start Learning</button></a>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div id="contact" class="page-content">
+                    <div class="pageHead">
+                        <h1>Contact Us</h1>
+                    </div>
+                    <div class="pageItem">
+
+                        <form method="get" action="/home.html" class="form">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" />
+
+                            <label for="email">Email Id</label>
+                            <input type="email" id="email" placeholder="Your Email address" />
+
+                            <label for="contact">Contact No</label>
+                            <input type="text" id="contact" placeholder="Your contact number" />
+
+                            <label for="country">Courses</label>
+                            <select id="country" name="country">
+                                <option value="australia">HTML</option>
+                                <option value="canada">CSS</option>
+                                <option value="usa">JavaScript</option>
+                                <option value="usa">Java</option>
+                                <option value="usa">Python</option>
+                                <option value="usa">Ruby</option>
+                            </select>
+                            <label for="textarea">Query</label>
+                            <textarea placeholder="Write your query..." cols="30" rows="5" id="textarea"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
+
+                    </div>
+
+
+                </div>
+                <div id="career" class="page-content">
+                    <div class="pageHead">
+                        <h1>Career</h1>
+                    </div>
+                    <div class="pageItem">
+                        <p>
+                            Comming Soon....
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="anouncment">
+                <div class="ancHead">
+                    <h1>Anouncments</h1>
+                </div>
+
+                <div class="ancItemBox">
+                    <marquee direction="up" behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 1 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 2 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 3 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 4 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 5 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 6 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 7 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 8 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 9 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                        <div class="ancItem">
+                            <a href="">
+                                <h4>Anouncments 10 </h4>
+                                <p>Lorem ipsum dolor, sit amet ctetur adiing elit. Anatur, accmus.</p>
+                            </a>
+                        </div>
+                </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; 2022 | Develop By Sandeep Kumar Gupta</p>
+    </div>
+
+
+</body>
+
+</html>

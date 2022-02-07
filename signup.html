@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: rgb(230, 200, 31);
+            height: 100vh;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+        .heading{
+            width: 100%;
+            margin-bottom: 20px;
+            margin-top: -30px;
+            text-align: center;
+            color: white;
+        }
+        .loginBox{
+            
+            border:1px solid black;
+            width: 350px;
+            margin: 0 auto;
+            padding: 30px 0;
+            background-color: white;
+            border: none;
+            box-shadow: 2px 4px 14px 1px grey;
+        }
+        .loginTital{
+            font-size: 13px;
+            background-color: rgb(117, 196, 0);
+            padding: 7px 0px;
+            width: 110px;
+            color: white;
+            text-align: center;
+        }
+        .loginForm{
+            margin-top: 10px;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .loginForm input{
+            margin: 5px 0;
+            height: 35px;
+            background-color: transparent;
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        .loginSubmit{
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 15px; 
+
+        }
+
+
+        .loginSubmit button{
+            width: 80px;
+            height: 30px;
+            background-color: rgb(117, 196, 0) ;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 2px;
+
+        }
+        .footer{
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            font-size: 15px;
+            padding-left: 20px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Learning Management System</h1>
+        </div>
+        <div class="loginBox">
+            <div class="loginTital">
+                <p>Let's Sign up</p>
+            </div>
+            <form action="/home.html">
+            <div class="loginForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Contact No" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <div class="loginSubmit">
+                <a href="home.html"> <button>Sign up</button></a>
+            </div>
+        </form>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; 2022 | Develop By Sandeep Kumar Gupta</p>
+    </div>
+    
+</body>
+</html>
